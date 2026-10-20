@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Arranges the Ride? How Five States Run Medicaid Medical Transportation | Joshua Phoebus</title>
+<meta name="description" content="How Pennsylvania, New York, New Jersey, Massachusetts, and Connecticut arrange non-emergency medical transportation for Medicaid members: delivery models, broker contracts, procurements, and 2025–26 legislation. Current as of October 20, 2026.">
+<meta property="og:title" content="Who Arranges the Ride? How Five States Run Medicaid Medical Transportation">
+<meta property="og:description" content="How five Northeast states arrange non-emergency medical transportation for Medicaid members: brokers, contracts, and procurement.">
+<meta property="og:image" content="https://jphoebus.github.io/medicaid-transportation/preview.png">
+<meta property="og:url" content="https://jphoebus.github.io/medicaid-transportation/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --limestone: #EDF0F1;
+    --paper: #FFFFFF;
+    --ink: #1B2631;
+    --slate: #52606D;
+    --rule: #CBD2D9;
+    --accent: #1F5C4A;
+    --accent-soft: #DCEBE5;
+    --font: "Public Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--limestone);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .measure { max-width: 68ch; }
+
+  /* Header */
+  header { padding: 64px 0 40px; }
+  h1 {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    max-width: 18ch;
+  }
+  .lede { font-size: 1.15rem; color: var(--slate); margin: 0; }
+
+  /* Where each state stands */
+  .standing {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 3px solid var(--ink);
+    margin-top: 40px;
+  }
+  .standing div {
+    padding: 16px 16px 20px 0;
+    border-right: 1px solid var(--rule);
+    padding-left: 16px;
+  }
+  .standing div:first-child { padding-left: 0; }
+  .standing div:last-child { border-right: 0; }
+  .standing strong { display: block; font-size: 1.25rem; font-weight: 700; }
+  .standing span { display: block; color: var(--slate); font-size: 0.95rem; }
+  .standing time { display: block; font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-top: 6px; }
+
+  /* Comparison */
+  section { padding: 48px 0; }
+  h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 12px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 20px; align-items: center; }
+  .filters p { margin: 0 8px 0 0; color: var(--slate); font-size: 0.95rem; }
+  .chip {
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: 1.5px solid var(--accent);
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+  }
+  .chip[aria-pressed="false"] { background: transparent; color: var(--accent); }
+  .table-scroll {
+    overflow-x: auto;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+  }
+  table { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 0.92rem; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--rule); }
+  thead th {
+    font-size: 1rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--ink);
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+  }
+  tbody th {
+    font-weight: 600;
+    color: var(--slate);
+    width: 170px;
+    position: sticky;
+    left: 0;
+    background: var(--paper);
+  }
+  tr.group th {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  [hidden] { display: none !important; }
+  td.empty { color: var(--slate); font-style: italic; }
+  td.sources a { display: block; word-break: break-word; margin-bottom: 4px; }
+  .status-msg { padding: 24px; color: var(--slate); }
+
+  /* Analysis */
+  .analysis { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .analysis h3 { font-size: 1.1rem; font-weight: 700; margin: 24px 0 4px; }
+  .analysis p { margin: 0; }
+  .question {
+    margin-top: 32px;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  ul.watch { padding-left: 1.1em; margin: 12px 0 0; }
+  ul.watch li { margin-bottom: 10px; }
+
+  .finding { font-size: 1.15rem; font-weight: 500; border-left: 4px solid var(--accent); padding-left: 20px; margin: 28px 0 0; }
+  .finding + .finding { margin-top: 14px; }
+  .band { background: var(--paper); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .terms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px 32px; margin-top: 8px; }
+  .terms h3 { font-size: 1.05rem; font-weight: 700; margin: 12px 0 4px; }
+  .terms p { margin: 0; }
+  footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; color: var(--slate); font-size: 0.95rem; }
+  footer p { margin: 0 0 12px; }
+
+  @media (max-width: 800px) {
+    .standing { grid-template-columns: 1fr 1fr; }
+    .standing div { border-right: 0; border-bottom: 1px solid var(--rule); padding-left: 0; }
+    .analysis, .terms { grid-template-columns: 1fr; gap: 16px; }
+    header { padding-top: 40px; }
+  }
+  @media print {
+    .filters { display: none; }
+    body { background: #fff; }
+    .table-scroll { overflow: visible; border: 0; }
+    thead th, tbody th { position: static; }
+  }
+</style>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Who arranges the ride?</h1>
+    <p class="lede measure">How Pennsylvania, New York, New Jersey, Massachusetts, and Connecticut arrange non-emergency medical transportation (NEMT) for Medicaid members: who runs it, who holds the contracts, and what is changing in 2025–26. Current as of October 20, 2026.</p>
+    <p class="finding measure"><strong>Delivery models:</strong> four of the five states hand rides to a broker. New York, New Jersey, and Connecticut each use one broker statewide, and Massachusetts uses two regional transit authorities. Pennsylvania runs rides through its 67 counties, with a state broker only in Philadelphia, and a 2026 state study recommended keeping that model.</p>
+    <p class="finding measure"><strong>Contracts and procurement:</strong> New York's broker contracts end in July 2027, and the base term in Connecticut's 2023 RFP ends that September. Procurement has been contested in three states: New York's 2022 award drew a protest; Pennsylvania cancelled two Philadelphia solicitations after protests, and a third is stayed; and in New Jersey, an August 2026 protest decision sent the rebid back for award to the incumbent.</p>
+
+    <div class="standing" aria-label="Key figures">
+      <div><strong>3 of 5</strong><span>Use one broker statewide: New York, New Jersey, Connecticut</span></div>
+      <div><strong>2</strong><span>Regional transit authorities broker rides in Massachusetts</span></div>
+      <div><strong>67</strong><span>Pennsylvania counties run the program; only Philadelphia uses a state broker</span></div>
+      <div><strong>3 of 5</strong><span>Recent broker procurements contested by protest or litigation: New York, Pennsylvania, New Jersey</span></div>
+      <div><strong>$32.65</strong><span>Average cost per trip in Pennsylvania, SFY 2025</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="terms" class="band">
+    <div class="wrap">
+      <h2>Three terms, briefly</h2>
+      <div class="terms">
+        <div>
+          <h3>Non-emergency medical transportation</h3>
+          <p>Medicaid must ensure members can get to covered medical care. NEMT covers rides to appointments, from public transit passes and mileage to wheelchair vans and stretcher transport, for members with no other way to get there.</p>
+        </div>
+        <div>
+          <h3>Brokers</h3>
+          <p>Companies or public agencies that take ride requests, check eligibility, assign trips to local transportation providers, and report on performance. States pay them a fixed amount per member, at cost, or through a mix.</p>
+        </div>
+        <div>
+          <h3>Carve-outs</h3>
+          <p>When a state removes a benefit from its managed care contracts and delivers it separately. Several states carve NEMT out of managed care so one broker or program handles rides for most members.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="comparison">
+    <div class="wrap">
+      <h2>Side-by-side comparison</h2>
+      <p class="measure">Choose which states to compare. On a phone, scroll the table sideways. Where a detail rests on a secondary source rather than a statute, regulation, contract record, or agency document, the table says "as reported."</p>
+      <div class="filters" id="filters" role="group" aria-label="States to compare"><p>Showing:</p><button class="chip" type="button" aria-pressed="true" data-state="pennsylvania">Pennsylvania</button><button class="chip" type="button" aria-pressed="true" data-state="newyork">New York</button><button class="chip" type="button" aria-pressed="true" data-state="newjersey">New Jersey</button><button class="chip" type="button" aria-pressed="true" data-state="massachusetts">Massachusetts</button><button class="chip" type="button" aria-pressed="true" data-state="connecticut">Connecticut</button></div>
+      <div class="table-scroll" tabindex="0" aria-label="Comparison table">
+        <table id="table">
+<thead><tr><th scope="col"></th>
+<th scope="col" data-state="pennsylvania">Pennsylvania</th>
+<th scope="col" data-state="newyork">New York</th>
+<th scope="col" data-state="newjersey">New Jersey</th>
+<th scope="col" data-state="massachusetts">Massachusetts</th>
+<th scope="col" data-state="connecticut">Connecticut</th>
+</tr></thead><tbody>
+<tr class="group"><th colspan="6" scope="colgroup">How rides are arranged</th></tr>
+<tr><th scope="row">Model</th>
+<td data-state="pennsylvania">County-run Medical Assistance Transportation Program (MATP). Of 67 counties: 38 use a county vendor, 13 a DHS direct agreement, 8 a county sole service provider, 7 a hybrid, and 1 a DHS broker (Philadelphia, since 2005).</td>
+<td data-state="newyork">One broker statewide, under two regional contracts (Downstate: New York City, Nassau, Suffolk, Westchester and Putnam; Upstate: the rest of the state).</td>
+<td data-state="newjersey">One statewide broker. State rules require that all non-emergency medical transportation be provided through an independent transportation broker (N.J.A.C. 10:50-1.4).</td>
+<td data-state="massachusetts">Two regional transit authorities serve as brokers statewide, under contracts with the Executive Office of Health and Human Services (EOHHS) Human Service Transportation (HST) Office, which arranges rides for six state agencies, including MassHealth.</td>
+<td data-state="connecticut">One statewide broker for HUSKY Health (Medicaid) and Covered CT members.</td>
+</tr>
+<tr><th scope="row">Managed care members</th>
+<td data-state="pennsylvania">Not carved into managed care: MATP is run by the member&#x27;s county, and plans help coordinate. Community HealthChoices plans pay for emergency ambulance and some non-emergency ambulance and stretcher trips; nursing facilities transport their own residents.</td>
+<td data-state="newyork">Carved out of managed care. Managed long-term care plans stopped arranging rides on March 1, 2024, and the broker took them over; the broker also took over rides for Fidelis members in Rockland County on April 1, 2026.</td>
+<td data-state="newjersey">Carved out of NJ FamilyCare managed care; plans remain responsible for emergency ground and air transport.</td>
+<td data-state="massachusetts">Brokered rides cover MassHealth Standard, CommonHealth and CarePlus members. One Care, Senior Care Options and PACE plans coordinate their members&#x27; rides. How ACO and MCO members are handled could not be confirmed from a current source.</td>
+<td data-state="connecticut">Statewide broker covers HUSKY A, C and D and Covered CT, according to the 2023 RFP.</td>
+</tr>
+<tr><th scope="row">Broker or vendor</th>
+<td data-state="pennsylvania">Philadelphia: Modivcare (formerly LogistiCare), paid a capitated per-member-per-month rate. Other counties use local transit agencies or vendors; Dauphin County moved MATP to rabbittransit on July 1, 2026.</td>
+<td data-state="newyork">Medical Answering Services (MAS), which took over Long Island from Modivcare on Dec. 1, 2023.</td>
+<td data-state="newjersey">Modivcare (formerly LogistiCare), first awarded the contract effective July 1, 2009.</td>
+<td data-state="massachusetts">Montachusett Regional Transit Authority (MART) for western, central, Metro Boston and northeastern Massachusetts; Greater Attleboro-Taunton Regional Transit Authority (GATRA) for the southeast, Cape Cod and the Islands. Brokers are paid at cost for transportation, with a shared-ride incentive, plus a fixed monthly management fee.</td>
+<td data-state="connecticut">Medical Transportation Management (MTM).</td>
+</tr>
+<tr class="group"><th colspan="6" scope="colgroup">Contracts and procurement</th></tr>
+<tr><th scope="row">Contract term</th>
+<td data-state="pennsylvania">Philadelphia contract dates not published. The pending solicitation (RFA 06-24) offers 3 years plus one 2-year option.</td>
+<td data-state="newyork">Two five-year contracts, Aug. 1, 2022 to July 31, 2027. Renewal options not found.</td>
+<td data-state="newjersey">Contract T2503 began Sept. 1, 2017 and has been extended by change order, most recently through Feb. 27, 2027. The term of the rebid contract was not found.</td>
+<td data-state="massachusetts">Start and end dates not published. A 2022 broker procurement consolidated nine service areas into three.</td>
+<td data-state="connecticut">The 2023 RFP set full operation from Oct. 1, 2024, a base term to Sept. 30, 2027, two one-year extensions at the agency&#x27;s discretion, and a $200.35 million cap. An executed contract confirming these terms was not found.</td>
+</tr>
+<tr><th scope="row">Procurement status</th>
+<td data-state="pennsylvania">RFA 06-24 for Philadelphia (issued Jan. 2025) is stayed while litigation is pending; two earlier solicitations were cancelled after bid protests. A statewide broker solicitation was cancelled in 2019 after the legislature stopped it.</td>
+<td data-state="newyork">The 2021 RFP allowed one statewide broker or two regions. Modivcare protested the award to MAS; the State Comptroller denied the protest on May 30, 2023. A rebid ahead of July 2027 was not found.</td>
+<td data-state="newjersey">Rebid (bid 24DPP01040) drew quotes from three bidders by March 4, 2026. A notice of intent to award to MTM (Aug. 6, 2026) was protested; on Aug. 20, 2026 the Division of Purchase and Property found MTM&#x27;s quote non-responsive, cancelled the notice, and remanded the matter for award to Modivcare as the only remaining responsive bidder. The appeal period ran 45 days from Aug. 20; as of Oct. 20, 2026, no appeal was found and no final award had been posted.</td>
+<td data-state="massachusetts">No current or upcoming broker procurement found.</td>
+<td data-state="connecticut">RFP issued Oct. 16, 2023; proposals due Dec. 4, 2023. No next rebid found.</td>
+</tr>
+<tr class="group"><th colspan="6" scope="colgroup">2025–26 activity</th></tr>
+<tr><th scope="row">Legislation and studies</th>
+<td data-state="pennsylvania">Act 46 of 2025 required a study of a statewide broker. The June 2026 study found the risks significantly outweighed the benefits and described ongoing work to improve the county model instead: updated MATP standards, PennDOT review of policy changes, and a Find My Ride module for mileage reimbursement requests. It put SFY 2025 spending at about $133.5 million for 4.1 million trips, about $32.65 per trip.</td>
+<td data-state="newyork">S4862 and A7329 would remove the requirement in Social Services Law § 365-h that brokers manage Medicaid transportation; both were re-referred to the Health committees on Jan. 7, 2026. A May 2025 policy limits covered rides to opioid treatment and outpatient programs to the member&#x27;s local medical market area.</td>
+<td data-state="newjersey">A985 (introduced Jan. 13, 2026) would set broker vehicle, staffing and performance standards and require reports to the Department of Human Services; a similar 2024 bill, A5032, did not advance past committee.</td>
+<td data-state="massachusetts">No NEMT-specific legislation or budget action found. From Jan. 1, 2026, members who lost Senior Care Options eligibility book rides through the HST brokers.</td>
+<td data-state="connecticut">HB 5356 (2026) would require the Department of Social Services to review NEMT rates at least annually and would let drivers with a pending taxi or livery license endorsement provide NEMT for up to 90 days; it cleared Human Services 21–2 and was tabled for the House calendar on April 7, 2026. A 2025 bill with a similar driver provision, SB 1298, cleared committee 22–0; final action not found.</td>
+</tr>
+<tr><th scope="row">Oversight and performance</th>
+<td data-state="pennsylvania">No 2025–26 statewide audit found. Counties monitor their own programs.</td>
+<td data-state="newyork">LeadingAge NY has raised cancellations and wheelchair and stretcher access with the Department of Health and the broker (as reported).</td>
+<td data-state="newjersey">The most recent audit found is from 2016: HHS-OIG found inadequate oversight and $64.7 million in noncompliant claims. No 2025–26 performance reports found.</td>
+<td data-state="massachusetts">A May 8, 2025 State Auditor report on FY21–FY23, when MassHealth paid the two brokers $283.3 million, estimated at least $1.67 million in overpayments for rides on days with no qualifying medical service.</td>
+<td data-state="connecticut">The legislature&#x27;s Medicaid oversight council reviews broker performance. In June 2025, on-time performance was reported above 90% in most months, against a 90% target, and a participant raised hospital discharge delays of 12 to 15 hours.</td>
+</tr>
+<tr><th scope="row">Oversight agency</th>
+<td data-state="pennsylvania">Department of Human Services, Office of Medical Assistance Programs; counties.</td>
+<td data-state="newyork">Department of Health; State Comptroller approves contracts and decides protests.</td>
+<td data-state="newjersey">Department of Human Services, Division of Medical Assistance and Health Services; Treasury&#x27;s Division of Purchase and Property runs the procurement.</td>
+<td data-state="massachusetts">EOHHS Human Service Transportation Office and MassHealth; State Auditor.</td>
+<td data-state="connecticut">Department of Social Services; Council on Medical Assistance Program Oversight.</td>
+</tr>
+<tr><th scope="row">Sources</th>
+<td class="sources" data-state="pennsylvania"><a href="https://www.pa.gov/content/dam/copapwp-pagov/en/dhs/documents/docs/publications/documents/highlighted-reports/matp-broker-study-act-46-of-2025-june-25-2026.pdf" rel="noopener">pa.gov</a><a href="https://prddhs.pwpca.pa.gov/HealthChoices/HC-Services/Documents/Transportation.pdf" rel="noopener">prddhs.pwpca.pa.gov</a><a href="https://www.uhcprovider.com/en/resource-library/news/2026/pa-medicaid-access-transportation-matp.html" rel="noopener">uhcprovider.com</a><a href="https://cbhphilly.org/members/member-resources/transportation-services/" rel="noopener">cbhphilly.org</a><a href="https://www.emarketplace.state.pa.us/Solicitations.aspx?SID=06-24" rel="noopener">emarketplace.state.pa.us</a><a href="https://www.dauphincounty.gov/home/dc-news/2026/05/21/matp-transition-to-rabbittransit" rel="noopener">dauphincounty.gov</a><a href="https://www.phlp.org/en/news/matp-update" rel="noopener">phlp.org</a></td>
+<td class="sources" data-state="newyork"><a href="https://healthweb-back.health.ny.gov/health_care/medicaid/members/medtrans_overview.htm" rel="noopener">healthweb-back.health.ny.gov</a><a href="https://healthweb-back.health.ny.gov/health_care/managed_care/mltc/faqs/non_emerg_trans_carve_out_faqs.htm" rel="noopener">healthweb-back.health.ny.gov</a><a href="https://www.osc.ny.gov/files/state-agencies/contracts/xreports/2023/forma/DOH01-C037557-3450000.pdf" rel="noopener">osc.ny.gov</a><a href="https://www.osc.ny.gov/files/state-agencies/contracts/2023/pdf/BID-PROTEST-2023.pdf" rel="noopener">osc.ny.gov</a><a href="https://health.ny.gov/funding/rfp/inactive/17965r/17965r.pdf" rel="noopener">health.ny.gov</a><a href="https://leadingageny.org/providers/nursing-homes/doh-notices-and-policies/medical-answering-service-mas-to-take-over-modivcare-non-emergency-medicaid-transportation-trips-in-long-island-on-december-1st/" rel="noopener">leadingageny.org</a><a href="https://www.nysenate.gov/legislation/bills/2025/S4862" rel="noopener">nysenate.gov</a><a href="https://healthweb-back.health.ny.gov/health_care/medicaid/members/transportation/medicaid_trans_cmma_policy.htm" rel="noopener">healthweb-back.health.ny.gov</a><a href="https://leadingageny.org/topics/workforce-issues-and-regulations/tools-and-resources/leadingage-ny-meets-with-doh-and-mas-on-medicaid-transportation-concerns/" rel="noopener">leadingageny.org</a></td>
+<td class="sources" data-state="newjersey"><a href="https://regulations.justia.com/states/new-jersey/title-10/chapter-50/subchapter-1/section-10-50-1-4" rel="noopener">regulations.justia.com</a><a href="https://nj.gov/humanservices/dmahs/individuals-families/transportation" rel="noopener">nj.gov</a><a href="https://www.withpavilion.com/solicitations/15e93033-01cd-4b8b-899e-d75c115b3a0a/contracts/njstart_t2503_modivcare-solutions" rel="noopener">withpavilion.com</a><a href="https://www.nj.gov/treasury/purchase/specialnotices/NJDPP-24DPP01040-2026-02-17T13_51_08.7571236Z.pdf" rel="noopener">nj.gov</a><a href="https://www.nj.gov/treasury/purchase/pdf/decisions/2026/IMOBidSolicitation24DPP01040-T2503TransportBrokerModivcare8.20.26.pdf" rel="noopener">nj.gov</a><a href="https://www.nj.gov/treasury/purchase/pdf/decisions/2026/IMOBidSolicitation24DPP01040T2503HBSS8.20.2026.pdf" rel="noopener">nj.gov</a><a href="https://www.healthcarefinancenews.com/news/new-jersey-awards-contract-medical-transport-medicaid-clients" rel="noopener">healthcarefinancenews.com</a><a href="https://open.pluralpolicy.com/nj/bills/221/A5032" rel="noopener">open.pluralpolicy.com</a><a href="https://app.legiplex.com/nj/legislature/2026/2026-r/bills/a985" rel="noopener">app.legiplex.com</a><a href="https://oig.hhs.gov/reports-and-publications/all-reports-and-publications/new-jersey-did-not-adequately-oversee-its-medicaid-nonemergency-medical-transportation-brokerage-program" rel="noopener">oig.hhs.gov</a></td>
+<td class="sources" data-state="massachusetts"><a href="https://www.mass.gov/info-details/providing-rides-through-the-hst-brokerage" rel="noopener">mass.gov</a><a href="https://www.mass.gov/info-details/agency-transportation-through-the-human-service-transportation-office" rel="noopener">mass.gov</a><a href="https://www.mass.gov/info-details/learn-about-non-emergency-medical-transportation-for-masshealth-members" rel="noopener">mass.gov</a><a href="https://www.medicaid.gov/Medicaid/spa/downloads/MA-21-0030" rel="noopener">medicaid.gov</a><a href="https://www.mass.gov/doc/human-service-transportation-office-broker-procurement-presentation-21422-0/download" rel="noopener">mass.gov</a><a href="https://www.mass.gov/audit/audit-of-the-office-of-medicaid-masshealth-review-of-transportation-services-may-8-2025" rel="noopener">mass.gov</a><a href="https://www.mass.gov/info-details/sco-eligibility-changes-faq-post-transition" rel="noopener">mass.gov</a></td>
+<td class="sources" data-state="connecticut"><a href="https://portal.ct.gov/dss/health-and-home-care/non-emergency-medical-transportation" rel="noopener">portal.ct.gov</a><a href="https://portal.ct.gov/-/media/departments-and-agencies/dss/dss-rfps/nemt-rfp_10162023.pdf" rel="noopener">portal.ct.gov</a><a href="https://portal.ct.gov/-/media/departments-and-agencies/dss/dss-rfps/addendum-1-nemt-rfp-10162023.pdf" rel="noopener">portal.ct.gov</a><a href="https://www.cga.ct.gov/2026/cbs/H/pdf/HB-5356.pdf" rel="noopener">cga.ct.gov</a><a href="https://prdext2.cga.ct.gov/2026/FC/PDF/2026HB-05356-R000414-FC.PDF" rel="noopener">prdext2.cga.ct.gov</a><a href="https://www.cga.ct.gov/2025/FC/PDF/2025SB-01298-R000428-FC.PDF" rel="noopener">cga.ct.gov</a><a href="https://www.cga.ct.gov/ph/med/" rel="noopener">cga.ct.gov</a></td>
+</tr>
+<tr><th scope="row">Last updated</th>
+<td data-state="pennsylvania">2026-10-20</td>
+<td data-state="newyork">2026-10-20</td>
+<td data-state="newjersey">2026-10-20</td>
+<td data-state="massachusetts">2026-10-20</td>
+<td data-state="connecticut">2026-10-20</td>
+</tr>
+</tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="analysis" class="band">
+    <div class="wrap">
+      <div class="analysis">
+        <div>
+          <h2>What stands out</h2>
+          <h3>Brokers are the norm; Pennsylvania is the exception</h3>
+          <p>Four states route rides through a broker. Pennsylvania's legislature stopped a statewide broker in 2019, and the state's June 2026 study found a broker's risks outweighed its benefits, including an estimated gain in federal matching funds, and focused on improving the county system.</p>
+          <h3>Managed care hands off the ride</h3>
+          <p>New York carved rides out of managed long-term care in 2024, New Jersey's rules carve them out of managed care, and Pennsylvania's counties serve plan members. Massachusetts is the partial exception: its integrated plans for older adults and people with disabilities arrange their own members' rides.</p>
+          <h3>Procurement is the pressure point</h3>
+          <p>Broker contracts are large, multi-year, and contested. New York's award was protested, Pennsylvania's Philadelphia solicitation has failed twice and is now in litigation, and New Jersey's rebid turned on a protest over a missing subcontractor form, while the contract that began in 2017 has run on change orders.</p>
+          <h3>Payment models differ</h3>
+          <p>Connecticut's RFP weighed a per-member-per-month model with a separate administrative budget against full capitation, with surpluses above 5% returned to the state; Philadelphia's broker is paid a capitated per-member-per-month rate; and Massachusetts pays its brokers at cost for transportation, plus a management fee and a shared-ride incentive. The model shapes who carries the risk when ride volume rises.</p>
+          <h3>Legislatures are writing accountability rules</h3>
+          <p>New Jersey's A985 would set broker performance standards, Connecticut's HB 5356 would require annual rate reviews, and New York's S4862 and A7329 would remove the broker requirement altogether. Massachusetts' auditor found overpayments, and Connecticut's oversight council reviews performance in public.</p>
+        </div>
+        <div>
+          <h2>What to watch</h2>
+          <ul class="watch">
+            <li>Pending: New Jersey's final award on remand under bid 24DPP01040, which had not been posted as of Oct. 20, 2026. The current contract extension runs through Feb. 27, 2027.</li>
+            <li>Pending: the litigation over Pennsylvania's Philadelphia solicitation (RFA 06-24), and DHS follow-through on updated MATP standards and the Find My Ride mileage reimbursement module.</li>
+            <li>2027 sessions: New Jersey's A985, New York's S4862 and A7329, and whether Connecticut's rate-review proposal returns.</li>
+            <li>July 31, 2027: New York's two broker contracts end; a rebid has not been posted.</li>
+            <li>Sept. 30, 2027: the end of the base term set in Connecticut's 2023 RFP, with two one-year extensions available.</li>
+          </ul>
+          <p class="question">The question I expect to shape the next cycle: whether states keep buying medical transportation as a standalone contract, or start tying ride performance to the managed care and long-term care decisions that depend on it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="wrap"><div class="measure">
+      <h2>How this was compiled</h2>
+      <p><strong>Scope.</strong> Five states, three areas: how Medicaid NEMT is delivered, the broker contracts and procurements, and 2025–26 legislation, studies, and oversight. Emergency ambulance and non-medical waiver transportation are noted only where they mark the edge of the NEMT program.</p>
+      <p><strong>Sources.</strong> Facts are drawn from state Medicaid agency pages, procurement notices, contract records, statutes and regulations, legislative records, audits, and federal filings. Where a detail rests on a secondary source, the table says "as reported." Where a detail could not be confirmed, such as an unpublished contract term, the page says so rather than guessing.</p>
+      <p><strong>Neutrality.</strong> Brokers, transportation providers, health plans, hospitals, counties, and members all have stakes in how these programs are run. This page describes how states have chosen to deliver rides, not which model or vendor is better.</p>
+      <p>The underlying data is in <a href="medicaid-transportation.csv">medicaid-transportation.csv</a>. This comparison is for policy analysis and is not legal or regulatory advice.</p>
+    </div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap measure">
+    <p>Compiled by Joshua Phoebus, former Director of Performance and Transformation in the Office of Pennsylvania Governor Tom Wolf. <a href="https://www.linkedin.com/in/joshuaphoebus">LinkedIn</a> · <a href="https://www.joshuaphoebusllc.com">Website</a> · <a href="https://jphoebus.github.io/">All projects</a></p>
+    <p>Part of a series on how states make decisions when the existing rules are tested. Related: <a href="https://jphoebus.github.io/state-drug-supply-chain/">Who sets the price of a prescription?</a> · <a href="https://jphoebus.github.io/tax-incentive-evaluation/">How states check their tax incentives</a> · <a href="https://jphoebus.github.io/state-payments-policy/">Is it a loan? How states set payments rules</a> · <a href="https://jphoebus.github.io/data-center-legislation-2026/">What states changed on data centers in 2026</a> · <a href="https://jphoebus.github.io/large-load-tariffs/">Who pays for data center power</a></p>
+    <p>Each state's sources are listed in the table. Last updated October 20, 2026.</p>
+  </div>
+</footer>
+
+<script>
+  // Each state button shows or hides that state's column. The table itself is plain HTML,
+  // so it displays even if this script never runs.
+  document.querySelectorAll("#filters .chip").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var on = b.getAttribute("aria-pressed") === "true";
+      b.setAttribute("aria-pressed", on ? "false" : "true");
+      document.querySelectorAll('#table [data-state="' + b.dataset.state + '"]').forEach(function (c) { c.hidden = on; });
+    });
+  });
+</script>
+<script data-goatcounter="https://jphoebus.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
