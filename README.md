@@ -1,6 +1,6 @@
 # Who Arranges the Ride? How Five States Run Medicaid Medical Transportation
 
-How Pennsylvania, New York, New Jersey, Massachusetts, and Connecticut arrange non-emergency medical transportation (NEMT) for Medicaid members: who runs it, who holds the contracts, and what is changing in 2025–26. Current as of October 20, 2026.
+How Pennsylvania, New York, New Jersey, Massachusetts, and Connecticut arrange non-emergency medical transportation (NEMT) for Medicaid members: who runs it, who holds the contracts, and what is changing in 2025–26. Current as of October 21, 2026.
 
 **Interactive version:** [jphoebus.github.io/medicaid-transportation](https://jphoebus.github.io/medicaid-transportation/)
 
